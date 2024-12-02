@@ -40,7 +40,6 @@ export default function ActiveCampaignCard({ campaign, index }: Props) {
 
   const campaignImagesUrl = campaignListPictureUrl(campaign)
 
-  console.log('state from card', campaignState)
   const reached = summary ? summary.reachedAmount + (summary.guaranteedAmount ?? 0) : 0
   const reachedAmount = moneyPublic(reached)
   const targetAmount = moneyPublic(campaign.targetAmount)

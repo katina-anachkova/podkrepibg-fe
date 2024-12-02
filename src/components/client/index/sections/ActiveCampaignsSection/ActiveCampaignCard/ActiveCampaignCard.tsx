@@ -33,16 +33,6 @@ export default function ActiveCampaignCard({ campaign, index }: Props) {
 
   const reachedAmount = moneyPublic(reached)
   const targetAmount = moneyPublic(campaign.targetAmount)
-  const progressBarColor =
-    campaign.state == 'active'
-      ? '#B1DEFE'
-      : campaign.state == 'complete'
-      ? '#5EDF8F'
-      : campaign.state == 'paused'
-      ? '#FFCB57'
-      : campaign.state == 'blocked'
-      ? 'C0BBBB'
-      : ''
 
   return (
     <Root data-testid={`campaign-card-${index}`}>
@@ -84,12 +74,7 @@ export default function ActiveCampaignCard({ campaign, index }: Props) {
               </SumNumber>
             </Sum>
           </SumWrapper>
-          <CampaignProgress
-            campaignId={id}
-            raised={reached}
-            target={target}
-            baseBgColor={progressBarColor}
-          />
+          <CampaignProgress campaignId={id} raised={reached} target={target} />
           <CampaignTitle>{title}</CampaignTitle>
         </StyledContent>
       </Link>

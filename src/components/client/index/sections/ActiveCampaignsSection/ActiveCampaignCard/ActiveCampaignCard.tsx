@@ -23,7 +23,7 @@ import {
 } from './ActiveCampaignCard.styled'
 
 type Props = { campaign: CampaignResponse; index: number }
-
+// commit comment
 export default function ActiveCampaignCard({ campaign, index }: Props) {
   const { t } = useTranslation('campaigns')
   const { id, slug, title, summary, targetAmount: target } = campaign

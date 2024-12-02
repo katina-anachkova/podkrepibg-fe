@@ -277,6 +277,7 @@ export default function InlineDonation({ campaign }: Props) {
   const rowCount = page * pageSize + donations.length
   const detailsShown = isOpen || !mobile
 
+  console.log('state from inlinedonation,', campaignState)
   const [anchorEl, setAnchorEl] = useState<Element | null>(null)
 
   const handleClose = () => setAnchorEl(null)

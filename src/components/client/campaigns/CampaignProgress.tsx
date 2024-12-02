@@ -9,9 +9,10 @@ type Props = {
   campaignId: UUID
   raised: number
   target: number
+  baseBgColor: string
 }
 
-export default function CampaignProgress({ campaignId, raised, target }: Props) {
+export default function CampaignProgress({ campaignId, raised, target, baseBgColor }: Props) {
   const percentage = useMemo(() => (raised / target) * 100, [raised, target])
   const percentageRound = Math.floor(percentage)
 
@@ -20,7 +21,7 @@ export default function CampaignProgress({ campaignId, raised, target }: Props) 
       completed={percentageRound > 100 ? 100 : percentageRound}
       aria-labelledby={`campaign-${campaignId}--donations-progressbar`}
       height={theme.spacing(1.62)}
-      baseBgColor={'#b1defe'}
+      baseBgColor={baseBgColor}
       bgColor={theme.palette.primary.main}
       labelColor={theme.palette.common.black}
       borderRadius={theme.borders.round}
